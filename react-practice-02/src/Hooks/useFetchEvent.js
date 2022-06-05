@@ -10,5 +10,6 @@ export const useFetchEvent = () => {
   useEffect(() => {
     eventsApi.fetchEventById(eventId).then(setEvent);
   }, [eventId]);
+
   return event;
 };
