@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useFetchEvent } from "../../Hooks/useFetchEvent";
 
 const EventSubView = () => {
   const event = useFetchEvent();
+  const location = useLocation();
 
   return (
     <>
@@ -11,7 +12,7 @@ const EventSubView = () => {
         <>
           <h2>{event.name}</h2>
           <img src={event.images[0].url} alt={event.name}></img>
-          <Link to="details">Details</Link>
+          <Link to="details" state={location.state  }>Details</Link>
         </>
       )}
     </>

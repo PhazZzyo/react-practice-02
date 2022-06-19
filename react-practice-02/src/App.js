@@ -4,6 +4,8 @@ import HomeView from "./Views/HomeView/HomeView";
 import Layout from "./Components/Layout/Layout";
 import EventsView from "./Views/EventsView/EventsView";
 import EventSubView from "./Views/EventSubView/EventSubView";
+import { EventDetailsView } from "./Views/EventDetailsView/EventDetailsView";
+import NotFoundView from "./Views/NotFoundView/NotFoundView";
 
 function App() {
   return (
@@ -13,8 +15,8 @@ function App() {
         <Route path="events" element={<EventsView />}>
           <Route path=":eventId" element={<EventSubView />} />
         </Route>
-        {/* <Route path="events/:eventId/details" element={<EventDetailsView />} />
-      <Route path="*" element={<NotFoundView />} /> */}
+        <Route path="events/:eventId/details" element={<EventDetailsView />} />
+      <Route path="*" element={<NotFoundView />} />
       </Route>
     </Routes>
   );
